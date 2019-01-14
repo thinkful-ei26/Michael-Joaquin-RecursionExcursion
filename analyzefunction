@@ -1,0 +1,43 @@
+The input is the first const defined it consists of a array of objects that have keys of id and parent
+At first the animals id will be set as the key of the main object then values would be added depending on if the parent value matches the id of the previous object
+The values are keys to the subvalues where they will be added if the parent matches the id of the object
+repeat this process until there is no more items.
+
+const animalHierarchy = [
+    {id: 'Animals', parent: null},
+    {id: 'Mammals', parent: 'Animals'},
+    {id: 'Dogs', parent:'Mammals' },
+    {id: 'Cats', parent:'Mammals' },
+    {id: 'Golden Retriever', parent: 'Dogs'},
+    {id: 'Husky', parent:'Dogs' },
+    {id: 'Bengal', parent:'Cats' }
+]
+
+// ==============================
+function traverse(animalHierarchy, parent) {
+    let node = {};
+    animalHierarchy.filter(item => item.parent === parent)
+                   .forEach(item => node[item.id] = traverse(animalHierarchy, item.id));
+    return node;  
+}
+console.log(traverse(animalHierarchy, null));
+
+let categories = [
+ { id: 'animals', parent: null },
+ { id: 'mamals', parent: 'animals' },
+ { id: 'cats', parent: 'mamals' },
+ { id: 'dogs', parent: 'mamals' },
+ { id: 'chihuahua', parent: 'dogs' },
+ { id: 'labrador', parent: 'dogs' },
+ { id: 'persian', parent: 'cats' },
+ { id: 'siamese', parent: 'cats' }
+];
+
+let makeTree = (categories, parent) => {
+ let node = {};
+ categories
+   .filter(c => c.parent === parent)
+   .forEach(c => (node[c.id] = makeTree(categories, c.id)));
+ return node;
+};
+console.log(JSON.stringify(makeTree(categories, null), null, 2));

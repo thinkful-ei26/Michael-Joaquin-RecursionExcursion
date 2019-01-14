@@ -1,0 +1,50 @@
+{
+    zuckerberg:{
+        Schroepfer:{
+            Bosworth:{
+                Steve:{},
+                Kyle:{},
+                Andra:{}
+            },
+            Zhoa:{
+                Richie:{},
+                Sophia:{},
+                Jen:{}
+            }
+        },
+        Schrage{
+            VanDyck:{
+                Sabrina:{},
+                Michelle:{},
+                Josh:{}
+            },
+            Swain:{
+                Blanch:{},
+                Tom:{},
+                Joe:{}
+            }
+        },
+        Sandberg{
+            Goler:{
+                Eddie:{},
+                Julie:{},
+                Annie:{}
+            },
+            Hernandez:{
+                Rowi:{},
+                Inga:{},
+                Morgan:{}
+            },
+            Moissinac: {
+                Amy: {},
+                Chuck:{},
+                Vinny: {}
+            },
+            Kelley: {
+                Eric:{},
+                Anna:{},
+                Wes:{}
+            }
+        }
+    }
+}
