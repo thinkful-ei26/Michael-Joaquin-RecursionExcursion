@@ -95,7 +95,19 @@ function traverse(employeeInfo, boss) {
                    .forEach(item => node[item.id] = traverse(employeeInfo, item.id));
     return node;  
 }
-console.log(JSON.stringify(traverse(employeeInfo, null)));
+// console.log(JSON.stringify(traverse(employeeInfo, null),null,4));
+// console.log(traverse(employeeInfo, null));
 
-
+//iterate the indent on each function call
+function formatter(obj, indent=0){
+    
+    let temp = Object.keys(obj);
+    for (let i = 0; i < temp.length; i++) {
+       console.log(" ".repeat(indent) + temp[i]);
+    //    console.log(Object.keys(obj[temp[i]]));
+       formatter(obj[temp[i]], indent+1); 
+    }
+}
 // 
+
+formatter(traverse(employeeInfo, null));
