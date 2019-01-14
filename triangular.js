@@ -15,4 +15,4 @@ function triangle(x) {
     }
 }
 
-console.log(triangle(9));
+console.log(triangle(5));
